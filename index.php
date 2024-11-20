@@ -23,7 +23,7 @@ Ajouter les carottes, le céleri, la courgette, la tomate, les lentilles et le b
 Assaisonner avec les herbes de Provence et le poivre.
 Laisser mijoter à feu moyen pendant environ 30 minutes, jusqu\'à ce que les lentilles et les légumes soient tendres.
 Servir chaud.',
-	'is_enabled' => false,],
+	'is_enabled' => true,],
 	['title' => 'Smoothie aux épinards, banane et lait d’amande',
 	'author' => 'cathrine',
 	'preparation' => 'Mettre tous les ingrédients dans un mixeur.
@@ -32,7 +32,7 @@ Servir immédiatement.',
 	'is_enabled' => true,]
 ];
 
-<?php
+
 
 $users = [
 	[
@@ -51,6 +51,21 @@ $users = [
 		'age' => 28,
 	],
 ];
+
+function isValidRecipe (array $recipes) 
+{
+	foreach($recipes as $recipe){ 
+
+		if ($recipe['is_enabled'] === true)
+		{
+			echo '<h2>' . $recipe['title'] . '</h2><br />';
+			echo '<p>' . $recipe['preparation'] . '</p><br />';
+			echo '<p>' . $recipe['author'] . '</p><br />';
+		}
+	}
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -59,22 +74,11 @@ $users = [
     <title>Affichage des recettes</title>
 </head>
 <body>
-    <ul>
-        <?php 
-		function isValidRecipe (array $recipes) : bool 
-		{
-			foreach($recipes as $recipe){ 
 
-				if ($recipe['is_enabled'] === true)
-				{
-					echo '<h2>' . $recipe['title'] . '</h2><br />';
-					echo '<p>' . $recipe['preparation'] . '</p><br />';
-					echo '<p>' . $recipe['author'] . '</p><br />';
-				}
-			}
-		}
-		
-		?>
+    <ul>
+    <?php
+	 isValidRecipe($recipes); 
+	 ?>
     </ul>
 </body>
 </html>
