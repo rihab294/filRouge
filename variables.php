@@ -4,11 +4,13 @@ $users = [
         'full_name' => 'Mickaël Andrieu',
         'email' => 'mickael.andrieu@exemple.com',
         'age' => 34,
+        
     ],
     [
         'full_name' => 'Mathieu Nebra',
         'email' => 'mathieu.nebra@exemple.com',
         'age' => 34,
+        'password' => 'devine',
     ],
     [
         'full_name' => 'Laurène Castor',
@@ -28,7 +30,7 @@ $recipes = [
         'title' => 'Couscous',
         'recipe' => 'Etape 1 : de la semoule',
         'author' => 'mickael.andrieu@exemple.com',
-        'is_enabled' => false,
+        'is_enabled' => true,
     ],
     [
         'title' => 'Escalope milanaise',
@@ -40,6 +42,6 @@ $recipes = [
         'title' => 'Salade Romaine',
         'recipe' => 'Etape 1 : prenez une belle salade',
         'author' => 'laurene.castor@exemple.com',
-        'is_enabled' => false,
+        'is_enabled' => true,
     ],
 ];

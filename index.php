@@ -1,4 +1,5 @@
-<?php
+<?php 
+session_start(); // $_SESSION 
 require_once(__DIR__ . '/variables.php');
 require_once(__DIR__ . '/functions.php');
 ?>
@@ -20,6 +21,11 @@ require_once(__DIR__ . '/functions.php');
         <!-- inclusion de l'entête du site -->
         <?php require_once(__DIR__ . '/header.php'); ?>
         <h1>Site de recettes</h1>
+     
+        <?php require_once(__DIR__ . '/login.php'); ?>
+
+        
+
         <?php foreach (getRecipes($recipes) as $recipe) : ?>
             <article>
                 <h3><?php echo $recipe['title']; ?></h3>
@@ -27,6 +33,7 @@ require_once(__DIR__ . '/functions.php');
                 <i><?php echo displayAuthor($recipe['author'], $users); ?></i>
             </article>
         <?php endforeach ?>
+      
     </div>
     <!-- inclusion du bas de page du site -->
     <?php require_once(__DIR__ . '/footer.php'); ?>
